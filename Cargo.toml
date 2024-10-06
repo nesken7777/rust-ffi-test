@@ -1,0 +1,17 @@
+[package]
+name = "rust-ffier"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8.5"
+lean-sys = { version = "0.0.7" }
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.release]
+panic = "abort"
+strip = true
+lto = true
+codegen-units = 1
